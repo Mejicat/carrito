@@ -1,46 +1,32 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidget from '../CartWidget';
 
 
 const NavBar = () => {
     return (
 
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Inicio</a> 
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Quienes somos</a> 
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> // editar link, crear HTML
-                                Productos
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Hot Wheels</a></li> 
-                                <li><a class="dropdown-item" href="#">Maisto</a></li> 
-                                <li><a class="dropdown-item" href="#">Monster Jam</a></li> 
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contacto</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <CartWidget />
-        </nav>
-    )
+        <Navbar expand="lg" className="bg-body-tertiary">
+        <Container>
+          <Navbar.Brand href="#home">Mis Autitos</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link href="#home">Inicio</Nav.Link>
+              <Nav.Link href="#link">Nosotros</Nav.Link>
+              <NavDropdown title="Categorias" id="basic-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">Hot Wheels</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">Maisto</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">Monster Jam</NavDropdown.Item>
+                </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+      <CartWidget/>
+    </Navbar>
+  )
 }
 
 export default NavBar

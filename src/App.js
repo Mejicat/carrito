@@ -13,7 +13,7 @@ function App() {
        <NavBar /> 
       </header>
        <ItemListContainer greeting='Hola, somos Mis Autitos' />
-  
+       
     </div>
   )
 }
