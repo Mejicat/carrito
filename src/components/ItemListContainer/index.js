@@ -1,21 +1,51 @@
+import { useState, useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
 import styles from './styles.module.css';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Container from 'react-bootstrap/Container';
 
-const ItemListContainer = ({ greeting }) => {
+
+export default function ItemListContainer () {
+    const [items, setItems] = useState ([])
+    const {id} = useParams ()
+
+    useEffect (() => {
+        const getProducts = async () => {
+            const response = await fetch ('/data/products.js')
+            const products = await response.json ()
+    
+            const filteredProducts = products.filter(product => product.category === id)
+
+            if (filteredProducts.length > 0) {
+                setItems (filteredProducts)}
+            else {
+                setItems (products)
+                 }
+        }
+        getProducts ()
+    }, [id])
 
     return (
-        <div className={styles['item-list-container']}>
-            <h1> {greeting} </h1>
-            
-            <div className="list-group">
-                <a href="#" className="list-group-item list-group-item-action active" aria-current="true">
-                    Categorías
-                </a>
-                <a href="#" className="list-group-item list-group-item-action">Hot Wheels</a>
-                <a href="#" className="list-group-item list-group-item-action">Maisto</a>
-                <a href="#" className="list-group-item list-group-item-action">Monster Jam</a>
-            </div>
-        </div>
-    )
+        <Container fluid className='mt-4'>
+            <Row>
+                {items.map (item => (
+                    <Col key={item.id} lg={4} className= 'mb-4' >
+                        <Card>
+                            <Card.Img variant='top' src={item.image} />
+                            <Card.Body>
+                                <Card.Title>{item.name}</Card.Title>
+                                <Card.Text>{item.description}</Card.Text>
+                                <Button as={Link} to={`/item/${item.id}`} variant='dark'>Ver más</Button>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+            )
+            )
+            }
+        </Row>
+    </Container>
+)
 }
-
-export default ItemListContainer

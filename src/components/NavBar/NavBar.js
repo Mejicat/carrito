@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -9,24 +10,24 @@ const NavBar = () => {
     return (
 
         <Navbar expand="lg" className="bg-body-tertiary">
-        <Container>
-          <Navbar.Brand href="#home">Mis Autitos</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link href="#home">Inicio</Nav.Link>
-              <Nav.Link href="#link">Nosotros</Nav.Link>
-              <NavDropdown title="Categorías" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Hot Wheels</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Maisto</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Monster Jam</NavDropdown.Item>
-                </NavDropdown>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-      <CartWidget/>
-    </Navbar>
-  )
+            <Container>
+                <Navbar.Brand as={Link} to= '/'>Mis Autitos</Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="me-auto">
+                        <Nav.Link as={Link} to= '/'>Inicio</Nav.Link>
+                        <Nav.Link href="#link">Nosotros</Nav.Link>
+                        <NavDropdown title="Categorías" id="basic-nav-dropdown">
+                            <NavDropdown.Item as={Link} to= '/category/Hot_Wheels'>Hot Wheels</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to= '/category/Maisto'>Maisto</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to= '/category/Monster_Jam'>Monster Jam</NavDropdown.Item>
+                        </NavDropdown>
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+            <CartWidget />
+        </Navbar>
+    )
 }
 
 export default NavBar

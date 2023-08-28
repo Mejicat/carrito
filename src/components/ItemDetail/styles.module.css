@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    min-height: 100vh; /* Asegurar que el contenedor tenga al menos la altura de la pantalla */
+    background-color: #f0f0f0;
+}
+
+.body_item {
+    text-align: center; /* Centrar el texto dentro del contenedor */
+    font-size: 24px;
+    color: #333;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.imagen_item {
+    width: 300px;
+    height: 300px;
+    display: block; 
+    margin: 0 auto; 
+    border: 1px solid #ddd; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    object-fit: contain;
+}
