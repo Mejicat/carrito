@@ -1,0 +1,61 @@
+.Counter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .Controls {
+    display: flex;
+    align-items: center;
+  }
+  
+  .Button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  
+  .Number {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 10px;
+  }
+  
+  .Button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .Button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Estilos para el botón "Agregar al carrito" */
+  .ButtonAddToCart {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .ButtonAddToCart:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .ButtonAddToCart:hover {
+    background-color: #1f8d1f;
+  }
+  

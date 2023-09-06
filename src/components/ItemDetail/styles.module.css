@@ -1,13 +1,13 @@
 .container {
     display: flex;
-    justify-content: center; /* Centrar horizontalmente */
-    align-items: center; /* Centrar verticalmente */
-    min-height: 100vh; /* Asegurar que el contenedor tenga al menos la altura de la pantalla */
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
     background-color: #f0f0f0;
 }
 
 .body_item {
-    text-align: center; /* Centrar el texto dentro del contenedor */
+    text-align: center; 
     font-size: 24px;
     color: #333;
     padding: 20px;
@@ -25,3 +25,13 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     object-fit: contain;
 }
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 24px;
+    margin-top: 10px;
+  }

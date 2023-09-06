@@ -1,13 +1,16 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Router from './router/Router'
+import Router from './router/Router';
+import { CartProvider } from './context/CartContext';
 
 
 
 
 function App() {
   return (
-    <Router />
+      <CartProvider>
+        <Router />
+      </CartProvider>
   )
 }
 
