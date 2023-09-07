@@ -1,0 +1,86 @@
+
+/* Estilos para el contenedor principal del carrito */
+.cart-container {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilos para cada elemento del carrito */
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .cart-item-image {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+  }
+  
+  .cart-item-details {
+    flex-grow: 1;
+  }
+  
+  /* Estilos para el botón de vaciar el carrito */
+  .clear-cart-button {
+    background-color: #ff5f5f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  .clear-cart-button:hover {
+    background-color: #e63939;
+  }
+  
+  /* Estilos para el enlace de checkout */
+  .checkout-link {
+    background-color: #5fcf80;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-block;
+    margin-left: 10px;
+  }
+  
+  .checkout-link:hover {
+    background-color: #4aaf68;
+  }
+  
+  /* Estilos para el mensaje "No hay productos en el carrito" */
+  .empty-cart-message {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  
+  /* Estilos para el enlace a la página de productos */
+  .products-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .products-link:hover {
+    text-decoration: underline;
+  }
+  

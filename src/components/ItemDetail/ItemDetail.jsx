@@ -31,7 +31,7 @@ export default function ItemDetail ({detail}) {
             {
                 quantityAdded > 0 ? (
                     
-                    <Link to="/cart">Finalizar compra</Link>
+                    <Link to="/cart" className={styles['checkout-button']}>Finalizar compra</Link>
                 ) : (
                     <ItemCount initial={1} stock={detail.stock} onAdd = {handleOnAdd}/>
                 )
