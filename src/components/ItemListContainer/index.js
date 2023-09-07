@@ -5,27 +5,36 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
+import { db } from "../../firebase/client";
+import styles from './styles.module.css';
+import { snapshot } from 'firebase/firestore';
+import {getDocs, collection, query, where, getDoc, limit, doc} from 'firebase/firestore';
 
 
 export default function ItemListContainer () {
     const [items, setItems] = useState ([])
+    const [loading, setLoading] = useState(true)
     const {id} = useParams ()
 
-    useEffect (() => {
+    useEffect(() => {
         const getProducts = async () => {
-            const response = await fetch ('/data/products.js')
-            const products = await response.json ()
+          try {
+            const productRef = collection(db, "products");
+            const data = await getDocs(productRef);
+            const dataFiltrada = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+            setItems(dataFiltrada)
+            setLoading(false)
+          } catch (error) {
+            console.error("Error fetching products:", error)
+          }
+        };
     
-            const filteredProducts = products.filter(product => product.category === id)
-
-            if (filteredProducts.length > 0) {
-                setItems (filteredProducts)}
-            else {
-                setItems (products)
-                 }
-        }
-        getProducts ()
-    }, [id])
+        getProducts();
+      }, []); 
+    
+      if (loading) {
+        return <p>Cargando...</p>
+      }
 
     return (
         <Container fluid className='mt-4'>
@@ -33,7 +42,7 @@ export default function ItemListContainer () {
                 {items.map (item => (
                     <Col key={item.id} lg={4} className= 'mb-4' >
                         <Card>
-                            <Card.Img variant='top' src={item.image} />
+                            <Card.Img variant='top' src={item.image} className={styles['imagen_item']} />
                             <Card.Body>
                                 <Card.Title>{item.name}</Card.Title>
                                 <Card.Text>{item.description}</Card.Text>
@@ -48,3 +57,4 @@ export default function ItemListContainer () {
     </Container>
 )
 }
+
