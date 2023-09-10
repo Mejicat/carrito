@@ -14,13 +14,22 @@ import {getDocs, collection, query, where, getDoc, limit, doc} from 'firebase/fi
 export default function ItemListContainer () {
     const [items, setItems] = useState ([])
     const [loading, setLoading] = useState(true)
-    const {id} = useParams ()
+    const { category } = useParams()
+    // const {id} = useParams ()
 
     useEffect(() => {
         const getProducts = async () => {
           try {
             const productRef = collection(db, "products");
-            const data = await getDocs(productRef);
+
+            let productQuery = query(productRef);
+
+            // Si se especifica una categoría en la URL, filtra por esa categoría
+            if (category) {
+              productQuery = query(productRef, where("category", "==", category));
+            }
+
+            const data = await getDocs(productQuery);
             const dataFiltrada = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
             setItems(dataFiltrada)
             setLoading(false)
@@ -30,7 +39,7 @@ export default function ItemListContainer () {
         };
     
         getProducts();
-      }, []); 
+      }, [category]); 
     
       if (loading) {
         return <p>Cargando...</p>
