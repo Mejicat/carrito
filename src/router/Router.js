@@ -1,7 +1,8 @@
-import ItemListContainer from '../components/ItemListContainer';
-import ItemDetailContainer from '../components/ItemDetailContainer';
+import ItemListContainer from '../components/ItemListContainer'
+import ItemDetailContainer from '../components/ItemDetailContainer'
 import Cart from '../components/Cart/Cart'
-import NavBar from '../components/NavBar/NavBar';
+import Checkout from '../components/Checkout/Checkout'
+import NavBar from '../components/NavBar/NavBar'
 import {
   BrowserRouter,
   Routes,
@@ -17,6 +18,7 @@ export default function Router () {
                 <Route path='/category/:category' element = {<ItemListContainer/>} />
                 <Route path='/item/:id' element = {<ItemDetailContainer/>} />
                 <Route path='/cart' element = {<Cart/>} />
+                <Route path='/checkout' element = {<Checkout/>} />
             </Routes>
         </BrowserRouter>
     )

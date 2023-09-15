@@ -1,0 +1,47 @@
+/* styles.module.css */
+
+/* Estilo para el contenedor principal del formulario */
+.Container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+  }
+  
+  /* Estilo para las etiquetas de los campos de entrada */
+  .Label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  /* Estilo para los campos de entrada */
+  .Input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  
+  /* Estilo para el botón de enviar */
+  .Button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  /* Estilo para el botón de enviar al pasar el mouse por encima */
+  .Button:hover {
+    background-color: #0056b3;
+  }
+  

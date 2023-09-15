@@ -20,6 +20,15 @@ const Cart = () => {
         )
     }
 
+    if (isNaN(total) || total <= 0) {
+        return (
+            <div className={styles['cart-container']}>
+                <h1 className={styles['empty-cart-message']}>El carrito está vacío o el total es inválido.</h1>
+                <Link to='/' className={styles['products-link']}>Volver a la página de productos</Link>
+            </div>
+        )
+    }
+
     return (
         <div className={styles['cart-container']}>
             {cart.map(p => <CartItem key={p.id} {...p}/>)}
