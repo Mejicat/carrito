@@ -5,11 +5,9 @@ import { Link } from 'react-router-dom';
 import styles from './styles.module.css';
 
 const Cart = () => {
-    const {cart, clearCart, totalQuantity} = useContext(CartContext)
+    const {cart, clearCart, totalQuantity, total} = useContext(CartContext)
 
-    const total = cart.reduce((accumulator, product) => {
-        return accumulator + (product.price * product.quantity)
-    }, 0)
+  
 
     if (totalQuantity === 0) {
         return (
