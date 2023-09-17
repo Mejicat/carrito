@@ -1,22 +1,22 @@
 import { useState } from "react";
-import styles from './styles.module.css';
+import styles from './styles.module.css'
 
 const CheckoutForm = ({ onConfirm }) => {
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
+  const [name, setName] = useState("")
+  const [phone, setPhone] = useState("")
+  const [email, setEmail] = useState("")
 
   const handleConfirm = (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
     const userData = {
       name,
       phone,
       email,
-    };
+    }
 
-    onConfirm(userData);
-  };
+    onConfirm(userData)
+  }
 
   return (
     <div className={styles.Container}>

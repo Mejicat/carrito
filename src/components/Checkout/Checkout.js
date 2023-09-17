@@ -13,7 +13,7 @@ const Checkout = () => {
 
     const createOrder = async ({name,phone,email}) => {
         setLoading(true)
-        console.log(total);
+
         if (typeof total !== "number" || isNaN(total)) {
             console.error("El total no es un número válido")
             setLoading(false)

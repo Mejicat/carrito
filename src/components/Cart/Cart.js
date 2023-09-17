@@ -1,8 +1,8 @@
-import { useContext } from "react";
-import { CartContext } from "../../context/CartContext";
-import  CartItem  from "../CartItem/CartItem";
-import { Link } from 'react-router-dom';
-import styles from './styles.module.css';
+import { useContext } from "react"
+import { CartContext } from "../../context/CartContext"
+import  CartItem  from "../CartItem/CartItem"
+import { Link } from 'react-router-dom'
+import styles from './styles.module.css'
 
 const Cart = () => {
     const {cart, clearCart, totalQuantity, total} = useContext(CartContext)

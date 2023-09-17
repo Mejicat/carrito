@@ -20,13 +20,12 @@ export default function ItemListContainer () {
     useEffect(() => {
         const getProducts = async () => {
           try {
-            const productRef = collection(db, "products");
+            const productRef = collection(db, "products")
 
-            let productQuery = query(productRef);
+            let productQuery = query(productRef)
 
-            // Si se especifica una categoría en la URL, filtra por esa categoría
             if (category) {
-              productQuery = query(productRef, where("category", "==", category));
+              productQuery = query(productRef, where("category", "==", category))
             }
 
             const data = await getDocs(productQuery);
@@ -38,8 +37,8 @@ export default function ItemListContainer () {
           }
         };
     
-        getProducts();
-      }, [category]); 
+        getProducts()
+      }, [category])
     
       if (loading) {
         return <p>Cargando...</p>
